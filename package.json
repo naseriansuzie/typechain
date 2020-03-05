@@ -4,8 +4,7 @@
   "description": "Learning Typescript by Making a Blockchain with it",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "prestart": "tsc"
+    "start": "tsc-watch --onSuccess \" node dist/index.js\" "
   },
   "repository": {
     "type": "git",
@@ -17,5 +16,10 @@
     "url": "https://github.com/naseriansuzie/typechain/issues"
   },
   "homepage": "https://github.com/naseriansuzie/typechain#readme",
-  "dependencies": {}
+  "dependencies": {
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "tsc-watch": "^4.2.3"
+  }
 }
