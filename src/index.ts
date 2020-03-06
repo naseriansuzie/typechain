@@ -42,7 +42,7 @@ let blockChain: Block[] = [genesisBlock];
 
 const getBlockchain = (): Block[] => blockChain;
 
-const getLatestBlock = (): Block => blockChain[blockChain.length - 1];
+const getLatestBlock = (): Block => getBlockchain()[getBlockchain().length - 1];
 
 const getNewTimeStamp = (): number => Math.round(new Date().getTime() / 1000);
 
@@ -63,6 +63,7 @@ const createNewBlock = (data: string): Block => {
     data,
     newTimestamp
   );
+  addBlock(newBlock);
   return newBlock;
 };
 
@@ -93,5 +94,18 @@ const addBlock = (candidateBlock: Block): void => {
     blockChain.push(candidateBlock);
   }
 };
+console.log(blockChain);
+setTimeout(() => {
+  createNewBlock("second Block");
+  console.log(blockChain);
+});
+setTimeout(() => {
+  createNewBlock("third Block");
+  console.log(blockChain);
+}, 2000);
+setTimeout(() => {
+  createNewBlock("fourth Block");
+  console.log(blockChain);
+}, 3000);
 
 export {};
