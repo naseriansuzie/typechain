@@ -1,3 +1,5 @@
+import * as CryptoJS from "crypto-js";
+
 class Block {
   public index: number;
   public hash: string;
@@ -20,7 +22,7 @@ class Block {
   }
 }
 
-const genesisBlock: Block = new Block(0, "asdfqwerasdf", "", "hello", 123456);
+const genesisBlock: Block = new Block(0, "qwerasdfzxcv", "", "hello", 123456);
 
 let blockChain: [Block] = [genesisBlock];
 
